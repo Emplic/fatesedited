@@ -5483,7 +5483,7 @@ AddCommand("serverhop", {"sh"}, "switches servers (optional: min, max (default: 
 
         local queue_on_teleport = syn and syn.queue_on_teleport or queue_on_teleport
         if (queue_on_teleport and not Args[2]) then
-            queue_on_teleport("loadstring(game.HttpGet(game, \"https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua\"))()");
+            queue_on_teleport("loadstring(game.HttpGet(game, \"loadstring(game:HttpGet("https://raw.githubusercontent.com/Emplic/fatesedited/main/2023"))();\"))()");
         end;
 
         Services.TeleportService:TeleportToPlaceInstance(game.PlaceId, Server.id);    
@@ -5611,7 +5611,7 @@ end)
 AddCommand("reloadscript", {}, "kills the script and reloads it", {}, function(Caller)
     if (Caller == LocalPlayer) then
         ExecuteCommand("killscript", {}, LocalPlayer);
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Emplic/fatesedited/main/2023"))();
     end
 end)
 
